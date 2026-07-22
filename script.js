@@ -83,13 +83,12 @@ function validateForm() {
   let valid = true;
 
   const requiredFields = [
-    ['firstName', 'First name is required'],
-    ['lastName', 'Last name is required'],
-    ['phone', 'Phone number is required'],
-    ['highestEducation', 'Please select your education level'],
-    ['yearsExperience', 'Years of experience is required'],
-    ['positionId', 'Please select a position']
-  ];
+  ['firstName', 'First name is required'],
+  ['lastName', 'Last name is required'],
+  ['phone', 'Phone number is required'],
+  ['highestEducation', 'Please select your education level'],
+  ['yearsExperience', 'Years of experience is required']
+];
 
   requiredFields.forEach(([name, msg]) => {
     const el = form.elements[name];
