@@ -65,7 +65,6 @@ const applicationValidation = [
   body('lastName').trim().notEmpty().withMessage('Last name is required'),
   body('email').trim().isEmail().withMessage('A valid email is required'),
   body('phone').trim().notEmpty().withMessage('Phone number is required'),
-  body('positionId').notEmpty().withMessage('Please select a position'),
   body('highestEducation').notEmpty().withMessage('Highest education is required'),
   body('yearsExperience').isFloat({ min: 0 }).withMessage('Years of experience must be a positive number')
 ];
@@ -130,7 +129,7 @@ app.post('/api/applications', upload.single('resume'), applicationValidation, as
         years_experience, current_employer, current_job_title, expected_salary, notice_period_days,
         cover_letter, resume_path)
        VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)`,
-      [applicantId, positionId, highestEducation, institutionName || null, fieldOfStudy || null,
+      [applicantId, positionId || null, highestEducation, institutionName || null, fieldOfStudy || null,
        graduationYear || null, yearsExperience, currentEmployer || null, currentJobTitle || null,
        expectedSalary || null, noticePeriodDays || null, coverLetter || null, resumePath]
     );

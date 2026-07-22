@@ -15,7 +15,7 @@ const cards = document.querySelectorAll('.card');
 // ---------------------------------------------------------
 async function loadPositions() {
   try {
-    const res = await fetch(`${API_BASE}/positions`);
+    const res = await fetch(`${API_BASE}/api/positions`);
     const positions = await res.json();
 
     positionSelect.innerHTML = '<option value="" disabled selected>Select a position</option>';
@@ -146,7 +146,7 @@ form.addEventListener('submit', async (e) => {
 
   try {
     const formData = new FormData(form);
-    const res = await fetch(`${API_BASE}/applications`, {
+    const res = await fetch(`${API_BASE}/api/applications`, {
       method: 'POST',
       body: formData
     });
