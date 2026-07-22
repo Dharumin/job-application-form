@@ -1,4 +1,4 @@
-const API_BASE = 'http://localhost:5000/api';
+const API_BASE = 'https://job-application-form-production.up.railway.app';
 
 const form = document.getElementById('applicationForm');
 const positionSelect = document.getElementById('positionId');
