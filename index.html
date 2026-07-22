@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Apply — Careers</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="masthead">
+  <div class="masthead__inner">
+    <span class="masthead__mark">Careers</span>
+    <span class="masthead__tag">Applications open</span>
+  </div>
+</header>
+
+<main class="page">
+
+  <section class="hero">
+    <p class="hero__eyebrow">Job Application</p>
+    <h1 class="hero__title">Tell us who you are<br>and where you're headed.</h1>
+    <p class="hero__sub">One form, four short parts. Takes about six minutes — save your resume as a PDF or Word file before you start.</p>
+  </section>
+
+  <!-- Progress rail -->
+  <nav class="rail" aria-label="Form sections">
+    <ol class="rail__list" id="railList">
+      <li class="rail__item is-active" data-step="1"><span class="rail__num">01</span><span class="rail__label">Personal</span></li>
+      <li class="rail__item" data-step="2"><span class="rail__num">02</span><span class="rail__label">Education</span></li>
+      <li class="rail__item" data-step="3"><span class="rail__num">03</span><span class="rail__label">Experience</span></li>
+      <li class="rail__item" data-step="4"><span class="rail__num">04</span><span class="rail__label">Application</span></li>
+    </ol>
+  </nav>
+
+  <form id="applicationForm" novalidate>
+
+    <!-- 01 Personal -->
+    <section class="card" data-section="1">
+      <div class="card__head">
+        <span class="card__num">01</span>
+        <div>
+          <h2 class="card__title">Personal details</h2>
+          <p class="card__hint">How we'll identify and reach you.</p>
+        </div>
+      </div>
+
+      <div class="grid grid--2">
+        <div class="field">
+          <label for="firstName">First name <em>*</em></label>
+          <input type="text" id="firstName" name="firstName" required>
+          <span class="field__error"></span>
+        </div>
+        <div class="field">
+          <label for="lastName">Last name <em>*</em></label>
+          <input type="text" id="lastName" name="lastName" required>
+          <span class="field__error"></span>
+        </div>
+      </div>
+
+      <div class="grid grid--2">
+        <div class="field">
+          <label for="email">Email address <em>*</em></label>
+          <input type="email" id="email" name="email" required>
+          <span class="field__error"></span>
+        </div>
+        <div class="field">
+          <label for="phone">Phone number <em>*</em></label>
+          <input type="tel" id="phone" name="phone" required>
+          <span class="field__error"></span>
+        </div>
+      </div>
+
+      <div class="grid grid--2">
+        <div class="field">
+          <label for="dateOfBirth">Date of birth</label>
+          <input type="date" id="dateOfBirth" name="dateOfBirth">
+        </div>
+        <div class="field">
+          <label for="linkedinUrl">LinkedIn profile</label>
+          <input type="url" id="linkedinUrl" name="linkedinUrl" placeholder="https://linkedin.com/in/...">
+        </div>
+      </div>
+
+      <div class="field">
+        <label for="addressLine">Address</label>
+        <input type="text" id="addressLine" name="addressLine" placeholder="Street address">
+      </div>
+
+      <div class="grid grid--4">
+        <div class="field">
+          <label for="city">City</label>
+          <input type="text" id="city" name="city">
+        </div>
+        <div class="field">
+          <label for="state">State</label>
+          <input type="text" id="state" name="state">
+        </div>
+        <div class="field">
+          <label for="postalCode">Postal code</label>
+          <input type="text" id="postalCode" name="postalCode">
+        </div>
+        <div class="field">
+          <label for="country">Country</label>
+          <input type="text" id="country" name="country">
+        </div>
+      </div>
+    </section>
+
+    <!-- 02 Education -->
+    <section class="card" data-section="2">
+      <div class="card__head">
+        <span class="card__num">02</span>
+        <div>
+          <h2 class="card__title">Education</h2>
+          <p class="card__hint">Your highest level of schooling.</p>
+        </div>
+      </div>
+
+      <div class="grid grid--2">
+        <div class="field">
+          <label for="highestEducation">Highest education <em>*</em></label>
+          <select id="highestEducation" name="highestEducation" required>
+            <option value="" disabled selected>Select one</option>
+            <option>High School</option>
+            <option>Diploma</option>
+            <option>Bachelors</option>
+            <option>Masters</option>
+            <option>PhD</option>
+            <option>Other</option>
+          </select>
+          <span class="field__error"></span>
+        </div>
+        <div class="field">
+          <label for="fieldOfStudy">Field of study</label>
+          <input type="text" id="fieldOfStudy" name="fieldOfStudy" placeholder="e.g. Computer Science">
+        </div>
+      </div>
+
+      <div class="grid grid--2">
+        <div class="field">
+          <label for="institutionName">Institution name</label>
+          <input type="text" id="institutionName" name="institutionName">
+        </div>
+        <div class="field">
+          <label for="graduationYear">Graduation year</label>
+          <input type="number" id="graduationYear" name="graduationYear" min="1950" max="2035" placeholder="2024">
+        </div>
+      </div>
+    </section>
+
+    <!-- 03 Experience -->
+    <section class="card" data-section="3">
+      <div class="card__head">
+        <span class="card__num">03</span>
+        <div>
+          <h2 class="card__title">Work experience</h2>
+          <p class="card__hint">Where you stand today.</p>
+        </div>
+      </div>
+
+      <div class="grid grid--2">
+        <div class="field">
+          <label for="yearsExperience">Years of experience <em>*</em></label>
+          <input type="number" id="yearsExperience" name="yearsExperience" min="0" step="0.5" required>
+          <span class="field__error"></span>
+        </div>
+        <div class="field">
+          <label for="noticePeriodDays">Notice period (days)</label>
+          <input type="number" id="noticePeriodDays" name="noticePeriodDays" min="0">
+        </div>
+      </div>
+
+      <div class="grid grid--2">
+        <div class="field">
+          <label for="currentEmployer">Current employer</label>
+          <input type="text" id="currentEmployer" name="currentEmployer">
+        </div>
+        <div class="field">
+          <label for="currentJobTitle">Current job title</label>
+          <input type="text" id="currentJobTitle" name="currentJobTitle">
+        </div>
+      </div>
+
+      <div class="field">
+        <label for="portfolioUrl">Portfolio / GitHub link</label>
+        <input type="url" id="portfolioUrl" name="portfolioUrl" placeholder="https://...">
+      </div>
+    </section>
+
+    <!-- 04 Application -->
+    <section class="card" data-section="4">
+      <div class="card__head">
+        <span class="card__num">04</span>
+        <div>
+          <h2 class="card__title">The application</h2>
+          <p class="card__hint">What you're applying for, and why.</p>
+        </div>
+      </div>
+
+      <div class="grid grid--2">
+        <div class="field">
+          <label for="positionId">Position <em>*</em></label>
+          <select id="positionId" name="positionId" required>
+            <option value="" disabled selected>Loading positions…</option>
+          </select>
+          <span class="field__error"></span>
+        </div>
+        <div class="field">
+          <label for="expectedSalary">Expected salary (₹ / year)</label>
+          <input type="number" id="expectedSalary" name="expectedSalary" min="0">
+        </div>
+      </div>
+
+      <div class="field">
+        <label for="coverLetter">Cover letter</label>
+        <textarea id="coverLetter" name="coverLetter" rows="5" placeholder="Why this role, why you — a few short paragraphs is plenty."></textarea>
+      </div>
+
+      <div class="field">
+        <label for="resume">Resume <em>*</em></label>
+        <div class="dropzone" id="dropzone">
+          <input type="file" id="resume" name="resume" accept=".pdf,.doc,.docx" required>
+          <p class="dropzone__text" id="dropzoneText">Drop a PDF or Word file here, or click to browse. Max 5MB.</p>
+        </div>
+        <span class="field__error"></span>
+      </div>
+    </section>
+
+    <div class="submit-row">
+      <p class="submit-row__note" id="formStatus"></p>
+      <button type="submit" class="btn-submit" id="submitBtn">Submit application</button>
+    </div>
+
+  </form>
+
+</main>
+
+<script src="script.js"></script>
+</body>
+</html>
